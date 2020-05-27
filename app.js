@@ -10,6 +10,13 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'https://wx2.fenglingtime.com/api/code/' + res.code,
+          success: res => {
+            console.log(res);
+            wx.setStorageSync('openid', res.data.openid);
+          }
+        })
       }
     })
     // 获取用户信息

@@ -7,21 +7,37 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    result: null
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+  addJob:function(){
+    wx.request({
+      url: 'https://wx2.fenglingtime.com/api/addJob/'+wx.getStorageSync('openid'),
+      success:res=>{
+        console.log(res);
+        if(res.data.result=='ok'){
+          this.setData({
+            result:'申报成功'
+          })
+        }
+      }
+    })
+  },
   onLoad: function () {
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        hasUserInfo: true,
+
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -43,8 +59,7 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
+  getUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
