@@ -10,5 +10,6 @@
   <view class="usermotto">
   <button bindtap="addJob">申报加班</button>
     <text class="user-motto" wx:if="{{result!=null}}">{{result}}</text>
+    <text class="user-motto">{{openid}}</text>
   </view>
 </view>

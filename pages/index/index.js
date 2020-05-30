@@ -8,7 +8,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    result: null
+    result: null,
+    openid: null
   },
   //事件处理函数
   bindViewTap: function () {
@@ -16,20 +17,40 @@ Page({
       url: '../logs/logs'
     })
   },
-  addJob:function(){
+  addJob: function () {
     wx.request({
-      url: 'https://wx2.fenglingtime.com/api/addJob/'+wx.getStorageSync('openid'),
-      success:res=>{
+      url: 'https://wx2.fenglingtime.com/api/addJob/' + wx.getStorageSync('openid'),
+      success: res => {
         console.log(res);
-        if(res.data.result=='ok'){
+        if (res.data.result == 'ok') {
           this.setData({
-            result:'申报成功'
+            result: '申报成功'
           })
         }
       }
     })
   },
   onLoad: function () {
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'https://wx2.fenglingtime.com/api/code/' + res.code,
+          success: res => {
+            console.log(res);
+            app.globalData.openid = res.data.openid;
+            if(!res.data.openid){
+              wx.redirectTo({
+                url: '../register/register'
+              })
+            }else{
+                console.log('用户存在');
+            }
+          }
+        })
+      }
+    })
 
     if (app.globalData.userInfo) {
       this.setData({

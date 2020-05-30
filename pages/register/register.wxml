@@ -1,0 +1,2 @@
+<!--pages/register/register.wxml-->
+<button bindtap="goHome">回首页</button>
