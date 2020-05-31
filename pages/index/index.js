@@ -1,7 +1,4 @@
-//index.js
-//获取应用实例
 const app = getApp()
-
 Page({
   data: {
     motto: 'Hello World',
@@ -9,7 +6,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     result: null,
-    openid: null
+    openid: null,
+    intxt: null
   },
   //事件处理函数
   bindViewTap: function () {
@@ -17,35 +15,43 @@ Page({
       url: '../logs/logs'
     })
   },
-  addJob: function () {
-    wx.request({
-      url: 'https://wx2.fenglingtime.com/api/addJob/' + wx.getStorageSync('openid'),
-      success: res => {
-        console.log(res);
-        if (res.data.result == 'ok') {
-          this.setData({
-            result: '申报成功'
-          })
-        }
-      }
+  intxt: function (e) {
+    this.setData({
+      intxt: e.detail.value
     })
+  },
+  addJob: function () {
+    wx.navigateTo({
+      url: '../modules/addjob/addjob'
+    })
+    // console.log(this.data.intxt)
+    // wx.request({
+    //   url: 'https://wx2.fenglingtime.com/api/addJob/' + wx.getStorageSync('openid'),
+    //   success: res => {
+    //     console.log(res);
+    //     if (res.data.result == 'ok') {
+    //       this.setData({
+    //         result: '申报成功'
+    //       })
+    //     }
+    //   }
+    // })
   },
   onLoad: function () {
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: 'https://wx2.fenglingtime.com/api/code/' + res.code,
+          url: 'https://wx2.fenglingtime.com/api/checkUser/' + res.code,
           success: res => {
-            console.log(res);
+            console.log('openid',res.data.openid);
             app.globalData.openid = res.data.openid;
-            if(!res.data.openid){
+            if (!res.data.user) {
               wx.redirectTo({
                 url: '../register/register'
               })
-            }else{
-                console.log('用户存在');
+            } else {
+              console.log('用户存在');
             }
           }
         })

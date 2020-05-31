@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/modules/addjob/addjob",
     "pages/register/register"
   ],
   "window": {
