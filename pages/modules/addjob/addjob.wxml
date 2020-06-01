@@ -9,35 +9,35 @@
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd"><label class="weui-label">时间</label></view>
 						<view class="weui-cell__bd">
-						 <picker mode="date" value="{{date}}"  bindchange="bindTimeChange">
-    					<view class="picker">
-    						 {{date}}
-    					</view>
- 						 </picker>
+							<picker mode="date" value="{{date}}" bindchange="bindTimeChange">
+								<view class="picker">
+									{{date}}
+								</view>
+							</picker>
 						</view>
 					</view>
 					<view class="weui-cell weui-cell_active">
-						<view class="weui-cell__hd">							
-              <label class="weui-label">吃饭</label>
-             </view>
+						<view class="weui-cell__hd">
+							<label class="weui-label">吃饭</label>
+						</view>
 						<view class="weui-cell__bd">
 							<radio-group bindchange="radioChange">
-        				<label  class=" weui-check__label" wx:for="{{cf}}" wx:key="{{item.id}}">
+								<label class=" weui-check__label" wx:for="{{cf}}" wx:key="{{item.id}}">
 									<radio value="{{item.id}}" checked="true" />{{item.name}}
 								</label>
-     					</radio-group>
+							</radio-group>
 						</view>
 					</view>
 					<view class="weui-cell weui-cell_active">
-						<view class="weui-cell__hd">							
-              <label class="weui-label">坐车</label>
-             </view>
+						<view class="weui-cell__hd">
+							<label class="weui-label">坐车</label>
+						</view>
 						<view class="weui-cell__bd">
 							<radio-group bindchange="radioChange">
-        				<label  class=" weui-check__label" wx:for="{{zc}}" wx:key="{{item.id}}">
+								<label class=" weui-check__label" wx:for="{{zc}}" wx:key="{{item.id}}">
 									<radio value="{{item.id}}" checked="true" />{{item.name}}
 								</label>
-     					</radio-group>
+							</radio-group>
 						</view>
 					</view>
 				</view>
@@ -48,6 +48,6 @@
 		<view class="weui-form__opr-area">
 			<a class="weui-btn weui-btn_primary">提交</a>
 		</view>
-		
+
 	</view>
 </view>

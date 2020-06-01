@@ -39,24 +39,24 @@ Page({
   },
   onLoad: function () {
     // 登录
-    wx.login({
-      success: res => {
-        wx.request({
-          url: 'https://wx2.fenglingtime.com/api/checkUser/' + res.code,
-          success: res => {
-            console.log('openid',res.data.openid);
-            app.globalData.openid = res.data.openid;
-            if (!res.data.user) {
-              wx.redirectTo({
-                url: '../register/register'
-              })
-            } else {
-              console.log('用户存在');
-            }
-          }
-        })
-      }
-    })
+    // wx.login({
+    //   success: res => {
+    //     wx.request({
+    //       url: 'https://wx2.fenglingtime.com/api/checkUser/' + res.code,
+    //       success: res => {
+    //         console.log('openid',res.data.openid);
+    //         app.globalData.openid = res.data.openid;
+    //         if (!res.data.user) {
+    //           wx.redirectTo({
+    //             url: '../register/register'
+    //           })
+    //         } else {
+    //           console.log('用户存在');
+    //         }
+    //       }
+    //     })
+    //   }
+    // })
 
     if (app.globalData.userInfo) {
       this.setData({

@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/register/register",
     "pages/index/index",
-    "pages/modules/addjob/addjob",
-    "pages/register/register"
+    "pages/modules/addjob/addjob"
   ],
   "window": {
     "backgroundTextStyle": "light",
