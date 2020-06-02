@@ -24,24 +24,24 @@ Page({
     })
   },
   bindSubmit: function () {
-    wx.redirectTo({
-      url: '../index/index',
-    })
-    // wx.request({
-    //   url: 'https://wx2.fenglingtime.com/api/addUser',
-    //   method: 'POST',
-    //   data: {
-    //     id: this.data.userId,
-    //     openid: getApp().globalData.openid,
-    //     name: this.data.userName,
-    //     department_id: this.data.department[this.data.departmentIndex].id
-    //   },
-    //   success: res => {
-    //     wx.redirectTo({
-    //       url: '../index/index',
-    //     })
-    //   }
+    // wx.redirectTo({
+    //   url: '../index/index',
     // })
+    wx.request({
+      url: 'https://wx2.fenglingtime.com/api/addUser',
+      method: 'POST',
+      data: {
+        id: this.data.userId,
+        openid: getApp().globalData.openid,
+        name: this.data.userName,
+        department_id: this.data.department[this.data.departmentIndex].id
+      },
+      success: res => {
+        wx.redirectTo({
+          url: '../index/index',
+        })
+      }
+    })
   },
 
   /**
