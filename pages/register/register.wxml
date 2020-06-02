@@ -10,13 +10,13 @@
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd"><label class="weui-label">工号</label></view>
 						<view class="weui-cell__bd">
-							<input id="js_input" class="weui-input" placeholder="填写本人工号" bindinput="bindUserIdChange" />
+							<input class="weui-input" placeholder="填写本人工号" bindinput="bindUserIdChange" />
 						</view>
 					</view>
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd"><label class="weui-label">姓名</label></view>
 						<view class="weui-cell__bd">
-							<input id="js_input" class="weui-input" placeholder="填写本人姓名" bindinput="bindUserNameChange" />
+							<input class="weui-input" placeholder="填写本人姓名" bindinput="bindUserNameChange" />
 						</view>
 					</view>
 					<view class="weui-cell weui-cell_active">
