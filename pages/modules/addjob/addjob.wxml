@@ -22,7 +22,7 @@
 						</view>
 						<view class="weui-cell__bd">
 							<radio-group bindchange="radioChange">
-								<label class=" weui-check__label" wx:for="{{cf}}" wx:key="{{item.id}}">
+								<label class=" weui-check__label" wx:for="{{cf}}" wx:key="id" >
 									<radio value="{{item.id}}" checked="true" />{{item.name}}
 								</label>
 							</radio-group>
@@ -34,7 +34,7 @@
 						</view>
 						<view class="weui-cell__bd">
 							<radio-group bindchange="radioChange">
-								<label class=" weui-check__label" wx:for="{{zc}}" wx:key="{{item.id}}">
+								<label class=" weui-check__label" wx:for="{{zc}}" wx:key="id">
 									<radio value="{{item.id}}" checked="true" />{{item.name}}
 								</label>
 							</radio-group>
