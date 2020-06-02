@@ -3,7 +3,7 @@ Page({
     userId: null,
     userName: null,
     userDepartmentId: null,
-    department: [],
+    departmentOption: [],
     departmentIndex: 0
   },
   bindUserIdChange: function (e) {
@@ -22,6 +22,10 @@ Page({
     })
   },
   bindSubmit: function () {
+    if (util.isNull(this.data.userId) || util.isNull(this.data.userName) || util.isNull(this.data.userDepartmentId)) {
+      wx.showToast({ title: '请完善加班信息', icon: 'none', duration: 2000 });
+      return;
+    }
     wx.request({
       url: 'https://wx2.fenglingtime.com/api/addUser',
       method: 'POST',

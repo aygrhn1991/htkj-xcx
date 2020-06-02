@@ -22,7 +22,7 @@
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd"><label class="weui-label">部门</label></view>
 						<view class="weui-cell__bd">
-							<picker bindchange="bindDepartmentChange" value="{{departmentIndex}}" range="{{department}}" range-key="name">
+							<picker value="{{departmentIndex}}" range="{{departmentOption}}" range-key="name" bindchange="bindDepartmentChange">
 								<view class="picker">{{department[departmentIndex].name}}</view>
 							</picker>
 						</view>

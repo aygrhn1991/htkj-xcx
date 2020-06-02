@@ -7,7 +7,7 @@ Page({
   },
   gotoAddJob: function () {
     wx.navigateTo({
-      url: '../modules/addjob/addjob'
+      url: '../modules/addjob/addjob/addjob'
     })
   },
   onLoad: function () {

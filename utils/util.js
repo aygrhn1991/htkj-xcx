@@ -26,7 +26,11 @@ const dateToYYYYMMDD = date => {
   var d = (date.getDate() >= 10 ? '' : '0') + date.getDate();
   return y + '-' + M + '-' + d;
 }
+const isNull = obj => {
+  return (obj === undefined || obj === null || obj === '') ? true : false;
+}
 module.exports = {
   dateToYYYYMMDDHHMMSS: dateToYYYYMMDDHHMMSS,
   dateToYYYYMMDD: dateToYYYYMMDD,
+  isNull: isNull,
 }

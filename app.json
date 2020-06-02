@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/modules/addjob/addjob",
     "pages/index/index",
+    "pages/modules/addjob/addjobrecord/addjobrecord",
+    "pages/modules/addjob/addjob/addjob",
     "pages/register/register"
   ],
   "window": {
