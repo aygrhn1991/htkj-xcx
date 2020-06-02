@@ -1,4 +1,4 @@
-<view class="page" data-weui-theme="{{theme}}">
+<view class="page">
 	<view class="weui-form">
 		<view class="weui-form__text-area">
 			<h2 class="weui-form__title">申报加班</h2>
@@ -9,10 +9,8 @@
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd"><label class="weui-label">时间</label></view>
 						<view class="weui-cell__bd">
-							<picker mode="date" value="{{date}}" bindchange="bindTimeChange">
-								<view class="picker">
-									{{date}}
-								</view>
+							<picker mode="date" value="{{date}}" bindchange="bindDateChange">
+								<view class="picker">{{date}}</view>
 							</picker>
 						</view>
 					</view>
@@ -21,7 +19,7 @@
 							<label class="weui-label">吃饭</label>
 						</view>
 						<view class="weui-cell__bd">
-							<radio-group bindchange="radioChange">
+							<radio-group bindchange="bindRadioChange">
 								<label class=" weui-check__label" wx:for="{{cf}}" wx:key="id" >
 									<radio value="{{item.id}}" checked="true" />{{item.name}}
 								</label>
