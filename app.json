@@ -1,14 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/modules/addjob/addjobrecord/addjobrecord",
     "pages/modules/addjob/addjob/addjob",
+    "pages/modules/addjob/addjobrecord/addjobrecord",
     "pages/register/register"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "航天科技小程序",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

@@ -10,20 +10,20 @@
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd"><label class="weui-label">工号</label></view>
 						<view class="weui-cell__bd">
-							<input class="weui-input" placeholder="填写本人工号" bindinput="bindUserIdChange" />
+							<input class="weui-input" placeholder="填写本人工号" model:value="{{userId}}" />
 						</view>
 					</view>
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd"><label class="weui-label">姓名</label></view>
 						<view class="weui-cell__bd">
-							<input class="weui-input" placeholder="填写本人姓名" bindinput="bindUserNameChange" />
+							<input class="weui-input" placeholder="填写本人姓名" model:value="{{userName}}" />
 						</view>
 					</view>
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd"><label class="weui-label">部门</label></view>
 						<view class="weui-cell__bd">
 							<picker value="{{departmentIndex}}" range="{{departmentOption}}" range-key="name" bindchange="bindDepartmentChange">
-								<view class="picker">{{department[departmentIndex].name}}</view>
+								<view class="picker">{{departmentOption[departmentIndex].name}}</view>
 							</picker>
 						</view>
 					</view>
