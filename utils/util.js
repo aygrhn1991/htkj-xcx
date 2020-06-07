@@ -29,8 +29,13 @@ const dateToYYYYMMDD = date => {
 const isNull = obj => {
   return (obj === undefined || obj === null || obj === '') ? true : false;
 }
+const startWith = (origin, str) => {
+  var reg = new RegExp("^" + str);
+  return reg.test(origin);
+}
 module.exports = {
   dateToYYYYMMDDHHMMSS: dateToYYYYMMDDHHMMSS,
   dateToYYYYMMDD: dateToYYYYMMDD,
   isNull: isNull,
+  startWith: startWith,
 }

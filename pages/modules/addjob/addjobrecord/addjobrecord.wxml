@@ -1,61 +1,17 @@
-<view class="page">
-    <view class="page__hd">
-        <view class="page__title">申报记录</view>
-    </view>
-    <view class="page__bd">
-        <view class="weui-cells__title">2020-01</view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-02</view>
-                <view class="weui-cell__ft">不用餐，不乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-03</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-04</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-04</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-04</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-04</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-04</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-04</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-04</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-        </view>
-        <view class="weui-cells__title">2020-01</view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-02</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-03</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__bd">2020-01-04</view>
-                <view class="weui-cell__ft">用餐，乘车</view>
-            </view>
-        </view>
-    </view>
+<view>
+	<view class="page__hd">
+		<view class="page__title">加班申报记录</view>
+	</view>
+	<view class="page__bd" wx:for="{{record}}" wx:for-item="month" wx:key="date">
+		<view class="weui-cells__title">{{month.date}}</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell" wx:for="{{month.data}}" wx:for-item="data" wx:key="id">
+				<view class="weui-cell__bd">{{data.time}}</view>
+				<view class="weui-cell__ft">
+					{{data.meal==1?'用餐':'不用餐'}}
+					{{data.bus==1?'乘车':'不乘车'}}
+				</view>
+			</view>
+		</view>
+	</view>
 </view>
