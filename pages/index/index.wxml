@@ -7,11 +7,20 @@
 			<open-data type="userNickName"></open-data>
 		</view>
 	</view>
-	<view class="usermotto" wx:if="{{userState==1||userState==3}}">{{userStateInfo}}</view>
+	<view class="usermotto" style="text-align:center;" wx:if="{{userState==1||userState==3}}">{{userStateInfo}}</view>
 	<view class="usermotto" wx:if="{{userState==2}}">
-		<view>姓名：{{user.name}}</view>
-		<view>工号：{{user.id}}</view>
-		<view>部门：{{user.department_name}}</view>
-		<button class="weui-btn weui-btn_primary" bindtap="gotoAddJob">申报加班</button>
+		<view class="weui-flex">
+			<view class="weui-flex__item text-right">姓名：</view>
+			<view class="weui-flex__item">{{user.name}}</view>
+		</view>
+		<view class="weui-flex">
+			<view class="weui-flex__item text-right">工号：</view>
+			<view class="weui-flex__item">{{user.id}}</view>
+		</view>
+		<view class="weui-flex">
+			<view class="weui-flex__item text-right">部门：</view>
+			<view class="weui-flex__item">{{user.department_name}}</view>
+		</view>
+		<button class="weui-btn weui-btn_primary" style="margin-top:10px;" bindtap="gotoAddJob">申报加班</button>
 	</view>
 </view>

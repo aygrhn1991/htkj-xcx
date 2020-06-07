@@ -12,10 +12,12 @@
   border-radius: 50%;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.text-right {
+  text-align: right;
 }
-
+.weui-flex{
+  line-height: 35px;
+}
 .usermotto {
   margin-top: 20px;
 }
