@@ -1,4 +1,4 @@
-<view class="page">
+<view>
 	<view class="weui-form">
 		<view class="weui-form__text-area">
 			<h2 class="weui-form__title">员工注册</h2>

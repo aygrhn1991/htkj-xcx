@@ -1,4 +1,4 @@
-<view class="page">
+<view>
 	<view class="weui-form">
 		<view class="weui-form__text-area">
 			<h2 class="weui-form__title">申报加班</h2>
@@ -21,7 +21,7 @@
 						<view class="weui-cell__bd">
 							<radio-group bindchange="bindMealChange">
 								<label class=" weui-check__label" wx:for="{{mealOption}}" wx:key="id">
-									<radio value="{{item.id}}" />{{item.name}}
+									<radio value="{{item.id}}" checked="{{item.checked}}" />{{item.name}}
 								</label>
 							</radio-group>
 						</view>
@@ -33,7 +33,7 @@
 						<view class="weui-cell__bd">
 							<radio-group bindchange="bindBusChange">
 								<label class=" weui-check__label" wx:for="{{busOption}}" wx:key="id">
-									<radio value="{{item.id}}" />{{item.name}}
+									<radio value="{{item.id}}" checked="{{item.checked}}" />{{item.name}}
 								</label>
 							</radio-group>
 						</view>

@@ -8,9 +8,7 @@ Page({
     departmentIndex: 0
   },
   bindDepartmentChange: function (e) {
-    this.setData({
-      departmentIndex: e.detail.value
-    })
+    this.setData({ departmentIndex: e.detail.value })
   },
   bindSubmit: function () {
     if (util.isNull(this.data.userId) || util.isNull(this.data.userName) || util.isNull(this.data.departmentIndex)) {
@@ -30,11 +28,11 @@ Page({
         wx.showToast({
           title: res.data.message,
           icon: res.data.success ? 'success' : 'none',
-          complete: r => {
+          success: () => {
             if (res.data.success) {
-              wx.redirectTo({
-                url: '../index/index',
-              })
+              setTimeout(() => {
+                wx.redirectTo({ url: '../index/index', })
+              }, 1500);
             }
           }
         })
@@ -46,9 +44,7 @@ Page({
     wx.request({
       url: 'https://wx2.fenglingtime.com/api/getDepartment',
       success: res => {
-        this.setData({
-          departmentOption: res.data.data
-        });
+        this.setData({ departmentOption: res.data.data });
       }
     })
   }

@@ -3,21 +3,19 @@ Page({
   data: {
     date: util.dateToYYYYMMDD(new Date()),
     dateStart: util.dateToYYYYMMDD(new Date()),
-    meal: null,
-    bus: null,
+    meal: 1,
+    bus: 1,
     mealOption: [
-      { id: '0', name: '不用餐' },
-      { id: '1', name: '用餐' },
+      { id: 0, name: '不用餐', checked: false },
+      { id: 1, name: '用餐', checked: true },
     ],
     busOption: [
-      { id: '0', name: '不乘车' },
-      { id: '1', name: '乘车' },
+      { id: 0, name: '不乘车', checked: false },
+      { id: 1, name: '乘车', checked: true },
     ]
   },
   bindDateChange: function (e) {
-    this.setData({
-      date: e.detail.value,
-    })
+    this.setData({ date: e.detail.value, })
   },
   bindMealChange: function (e) {
     var meal = null;
@@ -51,32 +49,35 @@ Page({
   },
   bindSubmit: function () {
     if (util.isNull(this.data.meal) || util.isNull(this.data.bus)) {
-      wx.showToast({ title: '请完善加班信息', icon: 'none', duration: 2000 });
+      wx.showToast({ title: '请完善加班信息', icon: 'none' });
       return;
     }
-    wx.showToast({ title: '提交成功', icon: 'success', duration: 2000 });
-    // wx.request({
-    //   url: 'https://wx2.fenglingtime.com/api/addJob',
-    //   method: 'POST',
-    //   data: {
-    //     openid: getApp().globalData.openid,
-    //     date: this.data.date,
-    //     meal: this.data.meal,
-    //     bus: this.data.bus,
-    //   },
-    //   success: res => {
-    //     wx.showToast({
-    //       title: '成功',
-    //       icon: 'success',
-    //       duration: 2000
-    //     })
-    //   }
-    // })
+    wx.request({
+      url: 'https://wx2.fenglingtime.com/api/addJob',
+      method: 'POST',
+      data: {
+        userid: getApp().globalData.user.id,
+        time: this.data.date,
+        meal: this.data.meal,
+        bus: this.data.bus,
+      },
+      success: res => {
+        wx.showToast({
+          title: res.data.message,
+          icon: res.data.success ? 'success' : 'none',
+          success: () => {
+            if (res.data.success) {
+              setTimeout(() => {
+                wx.redirectTo({ url: '../addjobrecord/addjobrecord', })
+              }, 1500);
+            }
+          }
+        })
+      }
+    })
   },
   gotoAddJobRecord: function () {
-    wx.navigateTo({
-      url: '../addjobrecord/addjobrecord'
-    })
+    wx.navigateTo({ url: '../addjobrecord/addjobrecord' })
   },
   onLoad: function (options) { },
 
