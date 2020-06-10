@@ -6,7 +6,7 @@
 		<view class="weui-cells__title">{{month.date}}</view>
 		<view class="weui-cells weui-cells_after-title">
 			<view class="weui-cell" wx:for="{{month.data}}" wx:for-item="data" wx:key="id">
-				<view class="weui-cell__bd">{{data.time}}</view>
+				<view class="weui-cell__bd">{{data.date}}</view>
 				<view class="weui-cell__ft">
 					{{data.meal==1?'用餐':'不用餐'}}
 					{{data.bus==1?'乘车':'不乘车'}}

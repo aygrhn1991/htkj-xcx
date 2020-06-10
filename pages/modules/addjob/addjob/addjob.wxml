@@ -26,6 +26,18 @@
 							</radio-group>
 						</view>
 					</view>
+					<view class="weui-cell weui-cell_active" wx:if="{{meal==1}}">
+						<view class="weui-cell__hd">
+							<label class="weui-label"></label>
+						</view>
+						<view class="weui-cell__bd">
+							<checkbox-group bindchange="bindMealTimeChange">
+								<label class="weui-check__label" wx:for="{{mealTimeOption}}" wx:key="id">
+									<checkbox value="{{item.id}}" checked="{{item.checked}}" />{{item.name}}
+								</label>
+							</checkbox-group>
+						</view>
+					</view>
 					<view class="weui-cell weui-cell_active">
 						<view class="weui-cell__hd">
 							<label class="weui-label">乘车</label>
@@ -33,6 +45,18 @@
 						<view class="weui-cell__bd">
 							<radio-group bindchange="bindBusChange">
 								<label class=" weui-check__label" wx:for="{{busOption}}" wx:key="id">
+									<radio value="{{item.id}}" checked="{{item.checked}}" />{{item.name}}
+								</label>
+							</radio-group>
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_active" wx:if="{{bus==1}}">
+						<view class="weui-cell__hd">
+							<label class="weui-label"></label>
+						</view>
+						<view class="weui-cell__bd">
+							<radio-group bindchange="bindBusTimeChange">
+								<label class="weui-check__label" wx:for="{{busTimeOption}}" wx:key="id">
 									<radio value="{{item.id}}" checked="{{item.checked}}" />{{item.name}}
 								</label>
 							</radio-group>

@@ -15,9 +15,11 @@
 .text-right {
   text-align: right;
 }
-.weui-flex{
+
+.weui-flex {
   line-height: 35px;
 }
+
 .usermotto {
   margin-top: 20px;
 }
