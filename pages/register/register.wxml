@@ -2,7 +2,7 @@
 	<view class="weui-form">
 		<view class="weui-form__text-area">
 			<h2 class="weui-form__title">员工注册</h2>
-			<view class="weui-form__desc">员工注册提交申请，经审核通过后方可使用本程序</view>
+			<!-- <view class="weui-form__desc">员工注册提交申请，经审核通过后方可使用本程序</view> -->
 		</view>
 		<view class="weui-form__control-area">
 			<view class="weui-cells__group weui-cells__group_form">

@@ -2,6 +2,7 @@
 	<view class="weui-form">
 		<view class="weui-form__text-area">
 			<h2 class="weui-form__title">申报加班</h2>
+			<view class="weui-form__desc">限当日15:00前申报次日加班</view>
 		</view>
 		<view class="weui-form__control-area">
 			<view class="weui-cells__group weui-cells__group_form">

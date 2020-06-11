@@ -26,6 +26,10 @@ const dateToYYYYMMDD = date => {
   var d = (date.getDate() >= 10 ? '' : '0') + date.getDate();
   return y + '-' + M + '-' + d;
 }
+const addDay = (date, day) => {
+  var d = date.getDate();
+  return new Date(date.setDate(d + day));
+}
 const isNull = obj => {
   return (obj === undefined || obj === null || obj === '') ? true : false;
 }
@@ -36,6 +40,7 @@ const startWith = (origin, str) => {
 module.exports = {
   dateToYYYYMMDDHHMMSS: dateToYYYYMMDDHHMMSS,
   dateToYYYYMMDD: dateToYYYYMMDD,
+  addDay: addDay,
   isNull: isNull,
   startWith: startWith,
 }

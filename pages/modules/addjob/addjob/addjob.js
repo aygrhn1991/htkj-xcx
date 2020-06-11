@@ -1,7 +1,7 @@
 var util = require('../../../../utils/util');
 Page({
   data: {
-    date: util.dateToYYYYMMDD(new Date()),
+    date: util.dateToYYYYMMDD(util.addDay(new Date(), 1)),
     dateStart: util.dateToYYYYMMDD(new Date()),
     meal: 1,
     mealTime: 2,
@@ -28,17 +28,16 @@ Page({
     this.setData({ date: e.detail.value, })
   },
   bindMealChange: function (e) {
-    var meal = null;
     this.data.mealOption.forEach(x => {
       if (x.id == e.detail.value) {
-        meal = e.detail.value;
+        this.data.meal = e.detail.value;
         x.checked = true;
       } else {
         x.checked = false;
       }
     });
     this.setData({
-      meal: meal,
+      meal: this.data.meal,
       mealOption: this.data.mealOption
     })
   },
@@ -50,24 +49,46 @@ Page({
     } else {
       this.data.mealTime = null;
     }
+    this.data.mealTimeOption.forEach(x => {
+      x.checked = false;
+      e.detail.value.forEach(y => {
+        if (x.id == y) {
+          x.checked = true;
+        }
+      });
+    });
+    this.setData({
+      mealTime: this.data.mealTime,
+      mealTimeOption: this.data.mealTimeOption
+    });
   },
   bindBusChange(e) {
-    var bus = null;
     this.data.busOption.forEach(x => {
       if (x.id == e.detail.value) {
-        bus = e.detail.value;
+        this.data.bus = e.detail.value;
         x.checked = true;
       } else {
         x.checked = false;
       }
     });
     this.setData({
-      bus: bus,
+      bus: this.data.bus,
       busOption: this.data.busOption
     })
   },
   bindBusTimeChange(e) {
-    this.data.busTime = e.detail.value;
+    this.data.busTimeOption.forEach(x => {
+      if (x.id == e.detail.value) {
+        this.data.busTime = e.detail.value;
+        x.checked = true;
+      } else {
+        x.checked = false;
+      }
+    });
+    this.setData({
+      busTime: this.data.busTime,
+      busTimeOption: this.data.busTimeOption
+    })
   },
   bindSubmit: function () {
     if (this.data.meal == 1) {
