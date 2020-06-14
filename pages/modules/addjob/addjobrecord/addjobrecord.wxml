@@ -1,17 +1,23 @@
 <view>
-	<view class="page__hd">
-		<view class="page__title">加班申报记录</view>
-	</view>
-	<view class="page__bd" wx:for="{{record}}" wx:for-item="month" wx:key="date">
-		<view class="weui-cells__title">{{month.date}}</view>
-		<view class="weui-cells weui-cells_after-title">
-			<view class="weui-cell" wx:for="{{month.data}}" wx:for-item="data" wx:key="id">
-				<view class="weui-cell__bd">{{data.date}}</view>
-				<view class="weui-cell__ft">
-					{{data.meal==1?'用餐':'不用餐'}}
-					{{data.bus==1?'乘车':'不乘车'}}
-				</view>
-			</view>
-		</view>
-	</view>
+  <view class="page__hd">
+    <view class="page__title">加班申报记录</view>
+  </view>
+  <view class="page__bd" wx:for="{{record}}" wx:for-item="month" wx:key="date">
+    <view class="weui-cells__title">{{month.date}}</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell" wx:for="{{month.data}}" wx:for-item="data" wx:key="id">
+        <view class="weui-cell__bd">{{data.date}}</view>
+        <view class="weui-cell__ft">
+          {{data.meal==1?'用餐':'不用餐'}}
+          <label
+            wx:if="{{data.meal==1}}"
+          >({{data.meal_time==1?'午餐':data.meal_time==2?'晚餐':'午餐,晚餐'}})</label>
+          {{data.bus==1?'乘车':'不乘车'}}
+          <label
+            wx:if="{{data.bus==1}}"
+          >({{data.bus_time==1?'16:30':'19:30'}})</label>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
