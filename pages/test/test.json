@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+    "usingComponents": {
+        "mp-grids": "/miniprogram_npm/weui-miniprogram/grids/grids",
+        "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon"
+    }
 }

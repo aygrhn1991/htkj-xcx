@@ -1,25 +1,28 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.user-avatar {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 30rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.user-info-sub {
+  font-size: 14px;
+  color: #888;
 }
 
-.text-right {
-  text-align: right;
+.user-state-text {
+  text-align: center;
+  line-height: 100px;
 }
 
-.weui-flex {
-  line-height: 35px;
+.page-group {
+  margin-bottom: 20px;
 }
 
-.usermotto {
-  margin-top: 20px;
+.page-group-title {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.weui-grid {
+  text-align: center;
 }

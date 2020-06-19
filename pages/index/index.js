@@ -2,10 +2,31 @@ Page({
     data: {
         user: null,
         userState: null,
-        userStateInfo: null
-    },
-    gotoAddJob: function() {
-        wx.navigateTo({ url: '../modules/addjob/addjob/addjob' })
+        userStateText: null,
+        date: "2016-09-01",
+        userPage: [{
+                name: '办公',
+                pages: [
+                    { name: '加班', icon: 'time',size:25, path: '/pages/modules/addjob/addjob/addjob' }
+                ]
+            },
+            {
+                name: '车间生产',
+                pages: [
+                    { name: '生产计划1', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
+                    { name: '生产计划2', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
+                    { name: '生产计划3生产计划3', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
+                    { name: '生产计划4', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
+                    { name: '生产计划5', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' }
+                ]
+            },
+            {
+                name: '管理',
+                pages: [
+                    { name: '加班统计', icon: 'time',size:25, path: '/pages/modules/addjob/addjob/addjob' }
+                ]
+            },
+        ]
     },
     onLoad: function() {
         wx.login({
@@ -23,7 +44,7 @@ Page({
                             if (res.data.data == 1 || res.data.data == 3) {
                                 this.setData({
                                     userState: res.data.data,
-                                    userStateInfo: res.data.message
+                                    userStateText: res.data.message
                                 });
                             } else {
                                 getApp().globalData.openid = res.data.data;

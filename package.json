@@ -1,0 +1,22 @@
+{
+  "name": "htkj-xcx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aygrhn1991/htkj-xcx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aygrhn1991/htkj-xcx/issues"
+  },
+  "homepage": "https://github.com/aygrhn1991/htkj-xcx#readme",
+  "dependencies": {
+    "weui-miniprogram": "^1.0.3"
+  }
+}
