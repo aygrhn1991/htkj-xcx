@@ -20,7 +20,6 @@ const addDay = (date, day) => {
 const dateToWeekDay = (date) => {
     var days = '日一二三四五六';
     return '星期' + days.charAt(date.getDay());
-
 }
 const stringToDate = (str) => {
     var date = new Date(str.replace(/-/g, '/'));
