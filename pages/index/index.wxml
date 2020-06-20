@@ -19,7 +19,7 @@
 			<view class="weui-grids">
 				<block wx:for="{{item.pages}}" wx:key="name">
 					<navigator url="{{item.path}}" class="weui-grid">
-						<mp-icon icon="{{item.icon}}" size="30"></mp-icon>
+						<mp-icon icon="{{item.icon}}" size="30" color="#07c160"></mp-icon>
 						<view class="weui-grid__label">{{item.name}}</view>
 					</navigator>
 				</block>

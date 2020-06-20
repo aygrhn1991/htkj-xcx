@@ -3,7 +3,6 @@ Page({
         user: null,
         userState: null,
         userStateText: null,
-        date: "2016-09-01",
         userPage: [{
                 name: '办公',
                 pages: [

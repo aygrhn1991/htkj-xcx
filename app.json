@@ -1,10 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/test/test",
+    "pages/register/register",
     "pages/modules/addjob/addjob/addjob",
-    "pages/modules/addjob/addjobrecord/addjobrecord",
-    "pages/register/register"
+    "pages/modules/addjob/addjobrecord/addjobrecord"
   ],
   "window": {
     "backgroundTextStyle": "light",
