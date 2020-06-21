@@ -12,7 +12,7 @@ Page({
             {
                 name: '车间生产',
                 pages: [
-                    { name: '生产计划1', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
+                    { name: '生产计划1', icon: 'discover',size:25, path: '/pages/modules/produce/plan/plan' },
                     { name: '生产计划2', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
                     { name: '生产计划3生产计划3', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
                     { name: '生产计划4', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
