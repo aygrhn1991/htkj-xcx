@@ -8,6 +8,7 @@ Page({
         mealTime: 2,
         bus: 1,
         busTime: 2,
+        busTo: 0,
         mealOption: [
             { id: 0, name: '不用餐', checked: false },
             { id: 1, name: '用餐', checked: true },
@@ -23,15 +24,18 @@ Page({
         busTimeOption: [
             { id: 1, name: '16:30', checked: false },
             { id: 2, name: '19:30', checked: true },
+        ],
+        busToOption: [
+            { id: 1, name: '乘车(8:00)', checked: false },
         ]
     },
-    bindDateChange: function(e) {
+    bindDateChange: function (e) {
         this.setData({
             date: e.detail.value,
             weekDay: util.dateToWeekDay(util.stringToDate(e.detail.value))
         })
     },
-    bindMealChange: function(e) {
+    bindMealChange: function (e) {
         this.data.mealOption.forEach(x => {
             if (x.id == e.detail.value) {
                 this.data.meal = e.detail.value;
@@ -45,7 +49,7 @@ Page({
             mealOption: this.data.mealOption
         })
     },
-    bindMealTimeChange: function(e) {
+    bindMealTimeChange: function (e) {
         if (e.detail.value.length == 2) {
             this.data.mealTime = 3;
         } else if (e.detail.value.length == 1) {
@@ -94,7 +98,26 @@ Page({
             busTimeOption: this.data.busTimeOption
         })
     },
-    bindSubmit: function() {
+    bindBusToChange(e) {
+        if (e.detail.value.length == 1) {
+            this.data.busTo = 1;
+        } else {
+            this.data.busTo = 0;
+        }
+        this.data.busToOption.forEach(x => {
+            x.checked = false;
+            e.detail.value.forEach(y => {
+                if (x.id == y) {
+                    x.checked = true;
+                }
+            });
+        });
+        this.setData({
+            busTo: this.data.busTo,
+            busToOption: this.data.busToOption
+        });
+    },
+    bindSubmit: function () {
         if (this.data.meal == 1 && util.isNull(this.data.mealTime)) {
             wx.showToast({ title: '请选择用餐时间', icon: 'none' });
             return;
@@ -125,9 +148,9 @@ Page({
             }
         })
     },
-    gotoAddJobRecord: function() {
+    gotoAddJobRecord: function () {
         wx.navigateTo({ url: '../addjobrecord/addjobrecord' })
     },
-    onLoad: function(options) {},
+    onLoad: function (options) { },
 
 })
