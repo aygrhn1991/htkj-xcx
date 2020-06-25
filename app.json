@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/modules/addjob/addjob/addjob",
     "pages/index/index",
     "pages/register/register",
-    "pages/modules/addjob/addjob/addjob",
     "pages/modules/addjob/addjobrecord/addjobrecord",
     "pages/modules/produce/plan/plan"
   ],

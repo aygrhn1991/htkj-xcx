@@ -1,66 +1,57 @@
 <mp-form-page title="申报加班" subtitle="限当日15:00前申报次日加班，法定节假日及休息后上班第一天加班情况请于放假前一天一同申报">
-  <mp-form>
-    <mp-cells>
-      <mp-cell title="时间">
-        <picker mode="date" value="{{date}}" start="{{dateStart}}" bindchange="bindDateChange">
-          <view class="picker">{{date}} {{weekDay}}</view>
-        </picker>
-      </mp-cell>
-      <mp-cell title="用餐">
-        <radio-group bindchange="bindMealChange">
-          <label class="weui-check__label" wx:for="{{mealOption}}" wx:key="id">
-            <radio value="{{item.id}}" checked="{{item.checked}}" />
-            {{item.name}}
-          </label>
-        </radio-group>
-      </mp-cell>
-      <mp-cell title=" " wx:if="{{meal==1}}">
-        <checkbox-group bindchange="bindMealTimeChange">
-          <label class="weui-check__label" wx:for="{{mealTimeOption}}" wx:key="id">
-            <checkbox value="{{item.id}}" checked="{{item.checked}}" />
-            {{item.name}}
-            <label style="margin-right:1em;"></label>
-          </label>
-        </checkbox-group>
-      </mp-cell>
-      <mp-cell title="乘车">
-        <radio-group bindchange="bindBusChange">
-          <label class="weui-check__label" wx:for="{{busOption}}" wx:key="id">
-            <radio value="{{item.id}}" checked="{{item.checked}}" />
-            {{item.name}}
-          </label>
-        </radio-group>
-      </mp-cell>
-      <mp-cell title=" " wx:if="{{bus==1}}">
-        <radio-group bindchange="bindBusTimeChange">
-          <label class="weui-check__label" wx:for="{{busTimeOption}}" wx:key="id">
-            <radio value="{{item.id}}" checked="{{item.checked}}" />
-            {{item.name}}
-            <label style="margin-right:0.4em;"></label>
-          </label>
-        </radio-group>
-      </mp-cell>
-      <mp-cell title="其他">
-        <checkbox-group bindchange="bindBusToChange">
-          <label class="weui-check__label" wx:for="{{busToOption}}" wx:key="id">
-            <checkbox value="{{item.id}}" checked="{{item.checked}}" />
-            {{item.name}}
-            <label style="margin-right:1em;"></label>
-          </label>
-        </checkbox-group>
-      </mp-cell>
-    </mp-cells>
-    <view class="weui-btn-area">
-      <button type="primary" bindtap="bindSubmit">提交</button>
-    </view>
-  </mp-form>
-  <view class="weui-form__extra-area">
-      <view class="weui-footer">
-        <view class="weui-footer__links">
-          <a class="weui-footer__link" bindtap="gotoAddJobRecord">申报记录</a>
-        </view>
-      </view>
-    </view>
+	<mp-form>
+		<mp-cells>
+			<mp-cell title="时间">
+				<picker mode="date" value="{{date}}" start="{{dateStart}}" bindchange="bindDateChange">
+					<view class="picker">{{date}} {{weekDay}}</view>
+				</picker>
+			</mp-cell>
+			<mp-cell title="用餐">
+				<radio-group bindchange="bindMealChange">
+					<label wx:for="{{mealOption}}" wx:key="id">
+						<radio value="{{item.id}}" checked="{{item.checked}}" />
+						{{item.name}}
+					</label>
+				</radio-group>
+			</mp-cell>
+			<mp-cell title=" " wx:if="{{meal==1}}">
+				<checkbox-group bindchange="bindMealTimeChange">
+					<label wx:for="{{mealTimeOption}}" wx:key="id">
+						<checkbox value="{{item.id}}" checked="{{item.checked}}" />
+						{{item.name}}
+						<label style="margin-right:1em;"></label>
+					</label>
+				</checkbox-group>
+			</mp-cell>
+			<mp-cell title="乘车(早)">
+				<checkbox-group bindchange="bindBusToChange">
+					<label wx:for="{{busToOption}}" wx:key="id">
+						<checkbox value="{{item.id}}" checked="{{item.checked}}" />
+						{{item.name}}
+					</label>
+				</checkbox-group>
+			</mp-cell>
+			<mp-cell title="乘车(晚)">
+				<radio-group bindchange="bindBusChange">
+					<label wx:for="{{busOption}}" wx:key="id">
+						<radio value="{{item.id}}" checked="{{item.checked}}" />
+						{{item.name}}
+					</label>
+				</radio-group>
+			</mp-cell>
+			<mp-cell title=" " wx:if="{{bus==1}}">
+				<radio-group bindchange="bindBusTimeChange">
+					<label wx:for="{{busTimeOption}}" wx:key="id">
+						<radio value="{{item.id}}" checked="{{item.checked}}" />
+						{{item.name}}
+						<label style="margin-right:0.4em;"></label>
+					</label>
+				</radio-group>
+			</mp-cell>
+		</mp-cells>
+		<view class="weui-btn-area">
+			<button type="primary" bindtap="bindSubmit">提交</button>
+		</view>
+		<view bindtap="gotoAddJobRecord" style="text-align:center;font-size:14px;margin-top:30px;">申报记录</view>
+	</mp-form>
 </mp-form-page>
-
-

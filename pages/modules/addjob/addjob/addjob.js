@@ -26,7 +26,7 @@ Page({
             { id: 2, name: '19:30', checked: true },
         ],
         busToOption: [
-            { id: 1, name: '乘车(8:00)', checked: false },
+            { id: 1, name: '8:00', checked: false },
         ]
     },
     bindDateChange: function (e) {
