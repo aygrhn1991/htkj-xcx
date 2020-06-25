@@ -3,21 +3,11 @@ Page({
         user: null,
         userState: null,
         userStateText: null,
-        userPage: [{
+        userPage: [],
+        userCommonPage: [{
             name: '办公',
-            pages: [{ imgUrl: '/img/addjob.png', url: '/pages/modules/addjob/addjob/addjob', text: '加班申报' },
-                // { imgUrl: '/img/empty.jpg', url: '/pages/modules/addjob/addjob/addjob', text: 'Grid' }
-            ]
-        },
-            // {
-            //     name: '车间生产',
-            //     pages: [{ text: '生产计划1', imgUrl: '/img/empty.jpg', url: '/pages/modules/produce/plan/plan' }]
-            // },
-            // {
-            //     name: '管理',
-            //     pages: [{ text: '生产计划1', imgUrl: '/img/empty.jpg', url: '/pages/modules/produce/plan/plan' }]
-            // }
-        ]
+            pages: [{ text: '加班申报', imgUrl: '/img/addjob.png', url: '/pages/modules/addjob/addjob/addjob' }]
+        }]
     },
     onLoad: function () {
         wx.login({
@@ -31,7 +21,27 @@ Page({
                             this.setData({
                                 user: res.data.data,
                                 userState: 2
-                            })
+                            });
+                            wx.request({
+                                url: getApp().globalData.host + `/auth/getPageOfUser/${this.data.user.id}`,
+                                success: res => {
+                                    var set = new Set();
+                                    res.data.data.forEach(x => {
+                                        set.add(x.group_name);
+                                    });
+                                    this.data.userPage = [];
+                                    Array.from(set).forEach(x => {
+                                        var temp = { name: x, pages: [] };
+                                        res.data.data.forEach(y => {
+                                            if (y.group_name == x) {
+                                                temp.pages.push({ text: y.name, imgUrl: '/img/' + y.image, url: y.path });
+                                            }
+                                        });
+                                        this.data.userPage.push(temp);
+                                    });
+                                    this.setData({ userPage: this.data.userPage });
+                                }
+                            });
                         } else {
                             if (res.data.data == 1 || res.data.data == 3) {
                                 this.setData({
