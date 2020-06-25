@@ -2,6 +2,6 @@
     "usingComponents": {
         "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells",
         "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
-        "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon"
+        "mp-grids": "/miniprogram_npm/weui-miniprogram/grids/grids"
     }
 }

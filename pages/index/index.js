@@ -5,26 +5,19 @@ Page({
         userStateText: null,
         userPage: [{
             name: '办公',
-            pages: [
-                { name: '加班', icon: 'time', size: 25, path: '/pages/modules/addjob/addjob/addjob' }
+            pages: [{ imgUrl: '/img/addjob.png', url: '/pages/modules/addjob/addjob/addjob', text: '加班申报' },
+                // { imgUrl: '/img/empty.jpg', url: '/pages/modules/addjob/addjob/addjob', text: 'Grid' }
             ]
         },
-        {
-            name: '车间生产',
-            pages: [
-                { name: '生产计划1', icon: 'discover', size: 25, path: '/pages/modules/produce/plan/plan' },
-                { name: '生产计划2', icon: 'discover', size: 25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
-                { name: '生产计划3生产计划3', icon: 'discover', size: 25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
-                { name: '生产计划4', icon: 'discover', size: 25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
-                { name: '生产计划5', icon: 'discover', size: 25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' }
-            ]
-        },
-        {
-            name: '管理',
-            pages: [
-                { name: '加班统计', icon: 'time', size: 25, path: '/pages/modules/addjob/addjob/addjob' }
-            ]
-        }]
+            // {
+            //     name: '车间生产',
+            //     pages: [{ text: '生产计划1', imgUrl: '/img/empty.jpg', url: '/pages/modules/produce/plan/plan' }]
+            // },
+            // {
+            //     name: '管理',
+            //     pages: [{ text: '生产计划1', imgUrl: '/img/empty.jpg', url: '/pages/modules/produce/plan/plan' }]
+            // }
+        ]
     },
     onLoad: function () {
         wx.login({
