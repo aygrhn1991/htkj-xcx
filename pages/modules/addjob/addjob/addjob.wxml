@@ -3,7 +3,7 @@
 		<mp-cells>
 			<mp-cell title="时间">
 				<picker mode="date" value="{{date}}" start="{{dateStart}}" bindchange="bindDateChange">
-					<view class="picker">{{date}} {{weekDay}}</view>
+					<view>{{date}} {{weekDay}}</view>
 				</picker>
 			</mp-cell>
 			<mp-cell title="用餐">
@@ -19,7 +19,6 @@
 					<label wx:for="{{mealTimeOption}}" wx:key="id">
 						<checkbox value="{{item.id}}" checked="{{item.checked}}" />
 						{{item.name}}
-						<label style="margin-right:1em;"></label>
 					</label>
 				</checkbox-group>
 			</mp-cell>
@@ -44,7 +43,6 @@
 					<label wx:for="{{busTimeOption}}" wx:key="id">
 						<radio value="{{item.id}}" checked="{{item.checked}}" />
 						{{item.name}}
-						<label style="margin-right:0.4em;"></label>
 					</label>
 				</radio-group>
 			</mp-cell>
@@ -52,6 +50,6 @@
 		<view class="weui-btn-area">
 			<button type="primary" bindtap="bindSubmit">提交</button>
 		</view>
-		<view bindtap="gotoAddJobRecord" style="text-align:center;font-size:14px;margin-top:30px;">申报记录</view>
+		<view bindtap="gotoAddJobRecord" class="bottom">申报记录</view>
 	</mp-form>
 </mp-form-page>

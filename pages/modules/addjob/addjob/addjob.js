@@ -1,8 +1,8 @@
 var util = require('../../../../utils/util');
 Page({
     data: {
-        date: util.dateToYYYYMMDD(util.addDay(new Date(), 1)),
-        dateStart: util.dateToYYYYMMDD(util.addDay(new Date(), 1)),
+        date: util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2)),
+        dateStart: util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2)),
         weekDay: util.dateToWeekDay(util.addDay(new Date(), 1)),
         meal: 1,
         mealTime: 2,
@@ -101,17 +101,11 @@ Page({
     bindBusToChange(e) {
         if (e.detail.value.length == 1) {
             this.data.busTo = 1;
+            this.data.busToOption[0].checked = true;
         } else {
             this.data.busTo = 0;
+            this.data.busToOption[0].checked = false;
         }
-        this.data.busToOption.forEach(x => {
-            x.checked = false;
-            e.detail.value.forEach(y => {
-                if (x.id == y) {
-                    x.checked = true;
-                }
-            });
-        });
         this.setData({
             busTo: this.data.busTo,
             busToOption: this.data.busToOption
@@ -131,7 +125,8 @@ Page({
                 meal: this.data.meal,
                 meal_time: this.data.meal == 1 ? this.data.mealTime : 0,
                 bus: this.data.bus,
-                bus_time: this.data.bus == 1 ? this.data.busTime : 0
+                bus_time: this.data.bus == 1 ? this.data.busTime : 0,
+                bus_to: this.data.busTo
             },
             success: res => {
                 wx.showToast({

@@ -32,6 +32,9 @@ const startWith = (origin, str) => {
     var reg = new RegExp("^" + str);
     return reg.test(origin);
 }
+const copyObject = (obj) => {
+    return JSON.parse(JSON.stringify(obj));
+}
 module.exports = {
     dateToYYYYMMDDHHMMSS: dateToYYYYMMDDHHMMSS,
     dateToYYYYMMDD: dateToYYYYMMDD,
@@ -40,4 +43,5 @@ module.exports = {
     stringToDate: stringToDate,
     isNull: isNull,
     startWith: startWith,
+    copyObject: copyObject,
 }

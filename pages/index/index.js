@@ -4,34 +4,34 @@ Page({
         userState: null,
         userStateText: null,
         userPage: [{
-                name: '办公',
-                pages: [
-                    { name: '加班', icon: 'time',size:25, path: '/pages/modules/addjob/addjob/addjob' }
-                ]
-            },
-            {
-                name: '车间生产',
-                pages: [
-                    { name: '生产计划1', icon: 'discover',size:25, path: '/pages/modules/produce/plan/plan' },
-                    { name: '生产计划2', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
-                    { name: '生产计划3生产计划3', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
-                    { name: '生产计划4', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
-                    { name: '生产计划5', icon: 'discover',size:25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' }
-                ]
-            },
-            {
-                name: '管理',
-                pages: [
-                    { name: '加班统计', icon: 'time',size:25, path: '/pages/modules/addjob/addjob/addjob' }
-                ]
-            },
-        ]
+            name: '办公',
+            pages: [
+                { name: '加班', icon: 'time', size: 25, path: '/pages/modules/addjob/addjob/addjob' }
+            ]
+        },
+        {
+            name: '车间生产',
+            pages: [
+                { name: '生产计划1', icon: 'discover', size: 25, path: '/pages/modules/produce/plan/plan' },
+                { name: '生产计划2', icon: 'discover', size: 25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
+                { name: '生产计划3生产计划3', icon: 'discover', size: 25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
+                { name: '生产计划4', icon: 'discover', size: 25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' },
+                { name: '生产计划5', icon: 'discover', size: 25, path: '/pages/modules/addjob/addjobrecord/addjobrecord' }
+            ]
+        },
+        {
+            name: '管理',
+            pages: [
+                { name: '加班统计', icon: 'time', size: 25, path: '/pages/modules/addjob/addjob/addjob' }
+            ]
+        }]
     },
-    onLoad: function() {
+    onLoad: function () {
         wx.login({
             success: res => {
+                wx.showLoading({ title: '加载中' });
                 wx.request({
-                    url: getApp().globalData.host + '/auth/login/' + res.code,
+                    url: getApp().globalData.host + `/auth/login/${res.code}`,
                     success: res => {
                         if (res.data.success) {
                             getApp().globalData.user = res.data.data;
@@ -50,7 +50,8 @@ Page({
                                 wx.redirectTo({ url: '../register/register' });
                             }
                         }
-                    }
+                    },
+                    complete: function () { wx.hideLoading() }
                 })
             }
         })
