@@ -38,7 +38,7 @@ Page({
                     var temp = { date: x, data: [] };
                     res.data.data.forEach(y => {
                         y.buttons = [{ type: 'warn', text: '撤回', data: util.copyObject(y) }];
-                        if (y.date == x) {
+                        if (util.startWith(y.date, x)) {
                             temp.data.push(y);
                         }
                     });
