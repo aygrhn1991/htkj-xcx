@@ -22,7 +22,3 @@
   font-size: 18px;
   margin: 5px 0;
 }
-
-.weui-grid {
-  text-align: center;
-}

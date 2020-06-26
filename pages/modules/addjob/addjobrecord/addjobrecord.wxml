@@ -1,6 +1,6 @@
 <mp-form-page title="加班申报记录" subtitle="左滑可操作">
 	<mp-form>
-		<mp-cells title="{{month.date}}" wx:for="{{record}}" wx:for-item="month" wx:key="date">
+		<mp-cells class="form-cell-fix" title="{{month.date}}" wx:for="{{record}}" wx:for-item="month" wx:key="date">
 			<mp-slideview buttons="{{data.buttons}}" bindbuttontap="slideButtonTap" wx:for="{{month.data}}" wx:for-item="data" wx:key="id">
 				<mp-cell title="{{data.date}}">
 					<view class="form-slot">

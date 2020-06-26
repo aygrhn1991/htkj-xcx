@@ -1,4 +1,4 @@
-<view class="page">
+<view>
 	<mp-cells>
 		<mp-cell>
 			<view slot="title" class="user-avatar">

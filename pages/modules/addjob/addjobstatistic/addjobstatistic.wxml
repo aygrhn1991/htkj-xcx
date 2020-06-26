@@ -1,5 +1,13 @@
 <mp-form-page title="加班统计">
 	<mp-form>
+		<mp-cells class="form-cell-fix" title="统计">
+			<mp-cell title="加班">123312人</mp-cell>
+			<mp-cell title="午餐">123312人</mp-cell>
+			<mp-cell title="晚餐">123312人</mp-cell>
+			<mp-cell title="早车(08:00)">123312人</mp-cell>
+			<mp-cell title="晚车(16:30)">123312人</mp-cell>
+			<mp-cell title="晚车(19:30)">123312人</mp-cell>
+		</mp-cells>
 		<mp-cells title="{{department.name}}" wx:for="{{record}}" wx:for-item="department" wx:key="name">
 			<mp-cell title="{{data.user_name}}" wx:for="{{department.data}}" wx:for-item="data" wx:key="id">
 				<view class="form-slot">
