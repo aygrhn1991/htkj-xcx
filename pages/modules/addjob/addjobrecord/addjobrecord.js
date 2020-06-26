@@ -1,7 +1,7 @@
 var util = require('../../../../utils/util');
 Page({
     data: {
-        record: null
+        record: []
     },
     slideButtonTap: function (e) {
         if (e.detail.data.date < util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2))) {
@@ -27,7 +27,7 @@ Page({
     onLoad: function (options) {
         wx.showLoading({ title: '加载中' });
         wx.request({
-            url: getApp().globalData.host + '/api/getAddJobRecordOfUser/' + getApp().globalData.user.id,
+            url: getApp().globalData.host + `/api/getAddJobRecordOfUser/${getApp().globalData.user.id}`,
             success: res => {
                 var set = new Set();
                 res.data.data.forEach(x => {

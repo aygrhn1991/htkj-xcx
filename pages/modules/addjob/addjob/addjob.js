@@ -3,7 +3,7 @@ Page({
     data: {
         date: util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2)),
         dateStart: util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2)),
-        weekDay: util.dateToWeekDay(util.addDay(new Date(), 1)),
+        weekDay: util.dateToWeekDay(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2)),
         meal: 1,
         mealTime: 2,
         bus: 1,
