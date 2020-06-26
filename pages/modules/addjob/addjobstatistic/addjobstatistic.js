@@ -13,11 +13,26 @@ Page({
       bus2Count: 0,
     },
   },
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value,
+      weekDay: util.dateToWeekDay(util.stringToDate(e.detail.value))
+    })
+    this.onLoad();
+  },
   onLoad: function (options) {
     wx.showLoading({ title: '加载中' });
     wx.request({
       url: getApp().globalData.host + `/api/getAddJobRecordOfDateWithoutPage/${this.data.date}`,
       success: res => {
+        this.data.statistic = {
+          userCount: 0,
+          meal1Count: 0,
+          meal2Count: 0,
+          busToCount: 0,
+          bus1Count: 0,
+          bus2Count: 0,
+        };
         res.data.data.forEach(x => {
           this.data.statistic.userCount++;
           if (x.meal_time == 1 || x.meal_time == 3) {

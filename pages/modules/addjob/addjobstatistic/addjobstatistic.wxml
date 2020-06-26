@@ -1,6 +1,11 @@
 <mp-form-page title="加班统计">
 	<mp-form>
 		<mp-cells class="form-cell-fix" title="统计">
+			<mp-cell title="时间">
+				<picker mode="date" value="{{date}}" bindchange="bindDateChange">
+					<view>{{date}} {{weekDay}}</view>
+				</picker>
+			</mp-cell>
 			<mp-cell title="加班"><label class="count">{{statistic.userCount}}</label>人</mp-cell>
 			<mp-cell title="午餐"><label class="count">{{statistic.meal1Count}}</label>人</mp-cell>
 			<mp-cell title="晚餐"><label class="count">{{statistic.meal2Count}}</label>人</mp-cell>
