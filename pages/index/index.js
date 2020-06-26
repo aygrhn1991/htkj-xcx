@@ -49,7 +49,7 @@ Page({
                             }
                         }
                     },
-                    complete: function () { wx.hideLoading() }
+                    complete: () => { wx.hideLoading() }
                 })
             }
         })

@@ -8,6 +8,10 @@
     max-width: 6em;
 }
 
+.form-cell-fix .weui-cell__ft {
+    display: none;
+}
+
 .page__bd {
     padding-left: 15px;
     padding-right: 15px;

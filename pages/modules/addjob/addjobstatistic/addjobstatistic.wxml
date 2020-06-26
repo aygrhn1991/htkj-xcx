@@ -1,14 +1,14 @@
 <mp-form-page title="加班统计">
 	<mp-form>
 		<mp-cells class="form-cell-fix" title="统计">
-			<mp-cell title="加班">123312人</mp-cell>
-			<mp-cell title="午餐">123312人</mp-cell>
-			<mp-cell title="晚餐">123312人</mp-cell>
-			<mp-cell title="早车(08:00)">123312人</mp-cell>
-			<mp-cell title="晚车(16:30)">123312人</mp-cell>
-			<mp-cell title="晚车(19:30)">123312人</mp-cell>
+			<mp-cell title="加班"><label class="count">{{statistic.userCount}}</label>人</mp-cell>
+			<mp-cell title="午餐"><label class="count">{{statistic.meal1Count}}</label>人</mp-cell>
+			<mp-cell title="晚餐"><label class="count">{{statistic.meal2Count}}</label>人</mp-cell>
+			<mp-cell title="早车(08:00)"><label class="count">{{statistic.busToCount}}</label>人</mp-cell>
+			<mp-cell title="晚车(16:30)"><label class="count">{{statistic.bus1Count}}</label>人</mp-cell>
+			<mp-cell title="晚车(19:30)"><label class="count">{{statistic.bus2Count}}</label>人</mp-cell>
 		</mp-cells>
-		<mp-cells title="{{department.name}}" wx:for="{{record}}" wx:for-item="department" wx:key="name">
+		<mp-cells class="form-cell-fix" title="{{department.name}}" wx:for="{{record}}" wx:for-item="department" wx:key="name">
 			<mp-cell title="{{data.user_name}}" wx:for="{{department.data}}" wx:for-item="data" wx:key="id">
 				<view class="form-slot">
 					<label wx:if="{{data.meal==1}}">{{data.meal_time==1?'餐(午)':data.meal_time==2?'餐(晚)':'餐(午,晚)'}} </label>

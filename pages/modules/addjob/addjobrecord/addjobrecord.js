@@ -46,7 +46,7 @@ Page({
                 });
                 this.setData({ record: this.data.record });
             },
-            complete: function () { wx.hideLoading() }
+            complete: () => { wx.hideLoading() }
         })
     }
 })
