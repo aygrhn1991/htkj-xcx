@@ -135,7 +135,7 @@ Page({
                     success: () => {
                         if (res.data.success) {
                             setTimeout(() => {
-                                wx.redirectTo({ url: '../addjobrecord/addjobrecord', })
+                                wx.redirectTo({ url: '/pages/modules/addjob/addjobrecord/addjobrecord', })
                             }, 1500);
                         }
                     }
@@ -144,7 +144,7 @@ Page({
         })
     },
     gotoAddJobRecord: function () {
-        wx.navigateTo({ url: '../addjobrecord/addjobrecord' })
+        wx.navigateTo({ url: '/pages/modules/addjob/addjobrecord/addjobrecord' })
     },
     onLoad: function (options) { },
 

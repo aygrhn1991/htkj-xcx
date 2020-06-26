@@ -45,7 +45,7 @@ Page({
                                 });
                             } else {
                                 getApp().globalData.openid = res.data.data;
-                                wx.redirectTo({ url: '../register/register' });
+                                wx.redirectTo({ url: '/pages/register/register' });
                             }
                         }
                     },

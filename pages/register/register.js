@@ -31,7 +31,7 @@ Page({
                     success: () => {
                         if (res.data.success) {
                             setTimeout(() => {
-                                wx.redirectTo({ url: '../index/index', })
+                                wx.redirectTo({ url: '/pages/index/index', })
                             }, 1500);
                         }
                     }
