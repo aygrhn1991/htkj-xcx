@@ -16,7 +16,7 @@ Page({
         });
         this.data.record = [];
         Array.from(set).forEach(x => {
-          var temp = { department: x, data: [] };
+          var temp = { name: x, data: [] };
           res.data.data.forEach(y => {
             if (y.department_name == x) {
               temp.data.push(y);

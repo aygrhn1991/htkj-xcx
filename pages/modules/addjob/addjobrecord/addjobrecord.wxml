@@ -1,18 +1,15 @@
-<view class="page">
-	<view class="page__hd">
-		<view class="page__title">加班申报记录</view>
-		<view class="page__desc">左滑可操作</view>
-	</view>
-	<mp-cells title="{{month.date}}" wx:for="{{record}}" wx:for-item="month" wx:key="date">
-		<mp-slideview buttons="{{data.buttons}}" bindbuttontap="slideButtonTap" wx:for="{{month.data}}" wx:for-item="data" wx:key="id">
-			<mp-cell>
-				<view>{{data.date}}</view>
-				<view slot="footer">
-					<label wx:if="{{data.meal==1}}">{{data.meal_time==1?'餐(午)':data.meal_time==2?'餐(晚)':'餐(午,晚)'}} </label>
-					<label wx:if="{{data.bus_to==1}}">早车 </label>
-					<label wx:if="{{data.bus==1}}">{{data.bus_time==1?'晚车(16:30)':'晚车(19:30)'}}</label>
-				</view>
-			</mp-cell>
-		</mp-slideview>
-	</mp-cells>
-</view>
+<mp-form-page title="加班申报记录" subtitle="左滑可操作">
+	<mp-form>
+		<mp-cells title="{{month.date}}" wx:for="{{record}}" wx:for-item="month" wx:key="date">
+			<mp-slideview buttons="{{data.buttons}}" bindbuttontap="slideButtonTap" wx:for="{{month.data}}" wx:for-item="data" wx:key="id">
+				<mp-cell title="{{data.date}}">
+					<view class="form-slot">
+						<label wx:if="{{data.meal==1}}">{{data.meal_time==1?'餐(午)':data.meal_time==2?'餐(晚)':'餐(午,晚)'}} </label>
+						<label wx:if="{{data.bus_to==1}}">早车 </label>
+						<label wx:if="{{data.bus==1}}">{{data.bus_time==1?'晚车(16:30)':'晚车(19:30)'}}</label>
+					</view>
+				</mp-cell>
+			</mp-slideview>
+		</mp-cells>
+	</mp-form>
+</mp-form-page>

@@ -14,9 +14,9 @@
 	</mp-cells>
 	<view class="page__bd user-state-text" wx:if="{{userState==1||userState==3}}">{{userStateText}}</view>
 	<view class="page__bd" wx:if="{{userState==2}}">
-		<view class="page-group" wx:for="{{userCommonPage}}" wx:key="name">
-			<view class="page-group-title">{{item.name}}</view>
-			<mp-grids grids="{{item.pages}}"></mp-grids>
+		<view class="page-group" wx:for="{{userCommonPage}}" wx:for-item="group" wx:key="name">
+			<view class="page-group-title">{{group.name}}</view>
+			<mp-grids grids="{{group.pages}}"></mp-grids>
 		</view>
 	</view>
 	<view class="page__bd" wx:if="{{userState==2}}">
