@@ -35,16 +35,16 @@ Page({
         };
         res.data.data.forEach(x => {
           this.data.statistic.userCount++;
-          if (x.meal_time == 1 || x.meal_time == 3) {
+          if (x.meal == 1 && (x.meal_time == 1 || x.meal_time == 3)) {
             this.data.statistic.meal1Count++;
           }
-          if (x.meal_time == 2 || x.meal_time == 3) {
+          if (x.meal == 1 && (x.meal_time == 2 || x.meal_time == 3)) {
             this.data.statistic.meal2Count++;
           }
-          if (x.bus_time == 1) {
+          if (x.bus == 1 && (x.bus_time == 1)) {
             this.data.statistic.bus1Count++;
           }
-          if (x.bus_time == 2) {
+          if (x.bus == 1 && (x.bus_time == 2)) {
             this.data.statistic.bus2Count++;
           }
           if (x.bus_to == 1) {
