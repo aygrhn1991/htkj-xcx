@@ -1,7 +1,7 @@
 App({
     onLaunch: function() {},
     globalData: {
-        host: 'https://wx3.fenglingtime.com',
+        host: 'https://wx2.fenglingtime.com',
         user: null,
         openid: null
     }

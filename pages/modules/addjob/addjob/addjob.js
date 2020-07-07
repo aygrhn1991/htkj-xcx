@@ -9,6 +9,7 @@ Page({
         bus: 1,
         busTime: 2,
         busTo: 0,
+        busToStation: null,
         mealOption: [
             { id: 0, name: '不用餐', checked: false },
             { id: 1, name: '用餐', checked: true },
@@ -116,6 +117,10 @@ Page({
             wx.showToast({ title: '请选择用餐时间', icon: 'none' });
             return;
         }
+        if (this.data.busTo == 1 && util.isNull(this.data.busToStation)) {
+            wx.showToast({ title: '请填写乘车站点', icon: 'none' });
+            return;
+        }
         wx.request({
             url: getApp().globalData.host + '/api/addJob',
             method: 'POST',
@@ -126,7 +131,8 @@ Page({
                 meal_time: this.data.meal == 1 ? this.data.mealTime : 0,
                 bus: this.data.bus,
                 bus_time: this.data.bus == 1 ? this.data.busTime : 0,
-                bus_to: this.data.busTo
+                bus_to: this.data.busTo,
+                bus_to_station: this.data.busTo == 1 ? this.data.busToStation : null
             },
             success: res => {
                 wx.showToast({

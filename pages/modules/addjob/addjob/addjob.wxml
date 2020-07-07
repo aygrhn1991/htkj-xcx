@@ -30,6 +30,9 @@
 					</label>
 				</checkbox-group>
 			</mp-cell>
+			<mp-cell title="站点" wx:if="{{busTo==1}}">
+				<input placeholder="请填写乘车站点" model:value="{{busToStation}}" />
+			</mp-cell>
 			<mp-cell title="乘车(晚)">
 				<radio-group bindchange="bindBusChange">
 					<label wx:for="{{busOption}}" wx:key="id">

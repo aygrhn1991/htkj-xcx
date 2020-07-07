@@ -5,7 +5,7 @@
 				<mp-cell title="{{data.date}}">
 					<view class="form-slot">
 						<label wx:if="{{data.meal==1}}">{{data.meal_time==1?'餐(午)':data.meal_time==2?'餐(晚)':'餐(午,晚)'}} </label>
-						<label wx:if="{{data.bus_to==1}}">早车 </label>
+						<label wx:if="{{data.bus_to==1}}">早车({{data.bus_to_station}}) </label>
 						<label wx:if="{{data.bus==1}}">{{data.bus_time==1?'晚车(16:30)':'晚车(19:30)'}}</label>
 					</view>
 				</mp-cell>
