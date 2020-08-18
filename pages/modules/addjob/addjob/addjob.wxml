@@ -1,4 +1,4 @@
-<mp-form-page title="申报加班" subtitle="限当日15:00前申报次日加班，法定节假日及休息后上班第一天加班情况请于放假前一天一同申报">
+<mp-form-page title="申报加班" subtitle="限当日12:00前申报当日加班，法定节假日加班情况请于放假前一天一同申报">
 	<mp-form>
 		<mp-cells>
 			<mp-cell title="时间">

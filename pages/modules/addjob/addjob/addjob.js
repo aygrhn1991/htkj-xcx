@@ -1,9 +1,9 @@
 var util = require('../../../../utils/util');
 Page({
     data: {
-        date: util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2)),
-        dateStart: util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2)),
-        weekDay: util.dateToWeekDay(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2)),
+        date: util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 12 ? 0 : 1)),
+        dateStart: util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 12 ? 0 : 1)),
+        weekDay: util.dateToWeekDay(util.addDay(new Date(), new Date().getHours() < 12 ? 0 : 1)),
         meal: 1,
         mealTime: 2,
         bus: 1,
