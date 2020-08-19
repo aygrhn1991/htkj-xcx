@@ -4,7 +4,7 @@ Page({
         record: []
     },
     slideButtonTap: function (e) {
-        if (e.detail.data.date < util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 15 ? 1 : 2))) {
+        if (e.detail.data.date < util.dateToYYYYMMDD(util.addDay(new Date(), new Date().getHours() < 12 ? 0 : 1))) {
             wx.showToast({ title: '该记录已生效，无法撤回', icon: 'none' });
             return;
         }
