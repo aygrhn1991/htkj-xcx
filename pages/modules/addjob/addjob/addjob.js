@@ -121,6 +121,14 @@ Page({
             wx.showToast({ title: '请填写乘车站点', icon: 'none' });
             return;
         }
+        var target = util.stringToDate(this.data.date);
+        var today = new Date();
+        if (target.getDay() == 6 || target.getDay() == 0) {
+            if (today.getDay() == 6 || today == 0 || (today.getDay() == 5 && new Date().getHours() > 12)) {
+                wx.showToast({ title: '已超过法定节假日加班申报期限', icon: 'none' });
+                return;
+            }
+        }
         wx.request({
             url: getApp().globalData.host + '/api/addJob',
             method: 'POST',
