@@ -24,7 +24,7 @@ Page({
         ],
         busTimeOption: [
             { id: 1, name: '16:30', checked: false },
-            { id: 2, name: '19:30', checked: true },
+            { id: 2, name: '19:00', checked: true },
         ],
         busToOption: [
             { id: 1, name: '8:00', checked: false },
